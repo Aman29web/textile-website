@@ -28,14 +28,14 @@ const CompanyOverview = () => {
 
   return (
     <section
-      className="bg-gray-50 py-20 px-4 lg:px-0"
+      className="bg-gray-50 py-20 px-4 lg:px-0 overflow-x-clip"
       ref={sectionRef}
       id="company-overview"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left Text Column */}
         <motion.div
-          className="md:w-1/2 w-full space-y-6"
+          className="md:w-1/2 w-full space-y-6 min-w-0"
           variants={fadeLeft}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -44,11 +44,11 @@ const CompanyOverview = () => {
             Welcome to Garlon Polyfab
           </h3>
 
-          <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">
+          <h2 className="text-4xl font-extrabold text-gray-900 leading-tight break-words">
             Pioneering Fabric Solutions for the Future
           </h2>
 
-          <p className="text-gray-700 text-base">
+          <p className="text-gray-700 text-base break-words">
             <strong className="text-gray-900">
               Garlon Polyfab Industries Limited
             </strong>{" "}
@@ -59,7 +59,7 @@ const CompanyOverview = () => {
             <strong>dedicated hygiene product division</strong>.
           </p>
 
-          <p className="text-gray-700 text-base">
+          <p className="text-gray-700 text-base break-words">
             With a commitment to{" "}
             <span className="font-semibold">
               innovation, sustainability, and excellence
@@ -68,7 +68,7 @@ const CompanyOverview = () => {
             solutions—pushing boundaries and weaving progress.
           </p>
 
-          <p className="text-gray-700 text-base">
+          <p className="text-gray-700 text-base break-words">
             Join us in shaping the future of textiles—where tradition meets
             cutting-edge technology.
           </p>
@@ -81,7 +81,7 @@ const CompanyOverview = () => {
 
         {/* Right Image Column */}
         <motion.div
-          className="md:w-1/2 w-full flex justify-center"
+          className="md:w-1/2 w-full flex justify-center min-w-0 overflow-hidden"
           variants={fadeRight}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}

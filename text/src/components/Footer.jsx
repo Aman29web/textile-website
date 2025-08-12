@@ -3,15 +3,15 @@ import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#242c80] text-gray-300 py-16 px-6 md:px-12" aria-label="Site Footer">
+    <footer className="bg-[#0A2240] text-white py-16 px-6 md:px-12" aria-label="Site Footer">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
         {/* Brand & Description */}
         <div className="space-y-4">
           <h2 className="text-2xl font-bold text-white tracking-wide">GARLON POLYFAB</h2>
-          <p className="text-gray-400 max-w-xs leading-relaxed">
+          <p className="text-white max-w-xs leading-relaxed">
             Premium Textile Manufacturer specializing in high-quality fabrics, innovative designs, and sustainable production techniques. Our commitment is to excellence and customer satisfaction.
           </p>
-          <p className="text-gray-400 text-sm">© {new Date().getFullYear()} GARLON POLYFAB INDUSTRIES LIMITED. All rights reserved.</p>
+          <p className="text-white text-sm">© {new Date().getFullYear()} GARLON POLYFAB INDUSTRIES LIMITED. All rights reserved.</p>
         </div>
 
         {/* Quick Links */}
@@ -34,7 +34,7 @@ const Footer = () => {
         {/* Contact Info */}
         <div className="space-y-4">
           <h3 className="text-white font-semibold mb-4">Contact Us</h3>
-          <address className="not-italic space-y-3 text-gray-400">
+          <address className="not-italic space-y-3 text-white">
             <p>123 Textile Road, Industrial Park</p>
             <p>Cityname, State, ZIP</p>
             <p>Phone: <a href="tel:+919876543210" className="hover:text-white transition">{"+91 98765 43210"}</a></p>
@@ -46,7 +46,7 @@ const Footer = () => {
         {/* Social Media */}
         <div className="space-y-4">
           <h3 className="text-white font-semibold mb-4">Follow Us</h3>
-          <p className="text-gray-400">Stay connected on social media for latest updates, news, and offers.</p>
+          <p className="text-white">Stay connected on social media for latest updates, news, and offers.</p>
           <div className="flex space-x-6 mt-3">
             {[{
               icon: Facebook,

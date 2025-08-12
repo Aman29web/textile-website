@@ -7,6 +7,9 @@ import StatsSection from './StatsSection'
 import Footer from '../../components/Footer'
 import BlogNewsCarousel from './BlogNewsCarousel'
 import TestimonialsCarousel from '../TestimonialsCarousel'
+import OurStrength from './OurStrength'
+import GarlonIntroPanel from './GarlonIntroPanel'
+// import AboutGarlon from '../about/AboutGarlon'
 
 const HomeRouter = () => {
   return (
@@ -16,6 +19,9 @@ const HomeRouter = () => {
       {/* <CorporateAbout></CorporateAbout> */}
       <CompanyOverview></CompanyOverview>
       <StatsSection></StatsSection>
+      <OurStrength></OurStrength>
+      <GarlonIntroPanel></GarlonIntroPanel>
+      {/* <AboutGarlon></AboutGarlon> */}
       <BlogNewsCarousel></BlogNewsCarousel>
       <TestimonialsCarousel></TestimonialsCarousel>
       <Footer></Footer>

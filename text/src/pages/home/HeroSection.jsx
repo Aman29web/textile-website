@@ -12,9 +12,9 @@ const socialLinks = [
 
 const HeroSection = () => {
   return (
-    <section className="w-full h-[76vh] md:h-[90vh] relative flex items-start md:items-center justify-center bg-gray-100 overflow-hidden">
+    <section className="w-full h-[76vh] md:h-[90vh] relative flex items-start md:items-center justify-center bg-gray-100 overflow-hidden overflow-x-clip">
       {/* Left half blue background */}
-      <div className="absolute top-0 left-0 h-full w-2/3 bg-[#242c80] z-0"></div>
+      <div className="absolute top-0 left-0 h-full w-1/3 bg-[#242c80] z-0"></div>
 
       {/* Social icons vertical bar - visible only on md and larger */}
       <div className="hidden md:flex flex-col absolute right-6 top-1/2 transform -translate-y-1/2 space-y-6 z-30">
@@ -32,7 +32,7 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <div className="relative w-[90%] md:w-[85%] h-[70vh] md:h-auto overflow-hidden shadow-xl z-10 mt-6 md:mt-0">
+      <div className="relative w-[90%] md:w-[85%] h-[70vh] md:h-[80vh] overflow-hidden shadow-xl z-10 mt-6 md:mt-0 max-h-[700px] max-w-full mx-auto">
         {/* 🔁 Continuously animated image */}
         <motion.img
           src={heroImage}
@@ -43,11 +43,11 @@ const HeroSection = () => {
             ease: "easeInOut",
             repeat: Infinity,
           }}
-          className="block w-full h-full object-cover max-h-[600px]"
+          className="block w-full h-full object-cover max-h-[700px]"
         />
 
         {/* Black overlay */}
-        <div className="absolute inset-0  z-10"></div>
+        <div className="absolute inset-0 z-10"></div>
 
         {/* Text overlay with grow animation */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 z-20">
@@ -55,7 +55,7 @@ const HeroSection = () => {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-white text-4xl sm:text-5xl md:text-7xl font-bold mb-2"
+            className="text-white text-4xl sm:text-5xl md:text-7xl font-bold mb-2 break-words"
           >
             GARLON POLYFAB
           </motion.h1>
@@ -63,7 +63,7 @@ const HeroSection = () => {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.3, ease: "easeOut", delay: 0.3 }}
-            className="text-white text-2xl sm:text-2xl md:text-5xl font-semibold"
+            className="text-white text-2xl sm:text-2xl md:text-5xl font-semibold break-words"
           >
             INDUSTRIES LIMITED
           </motion.h2>

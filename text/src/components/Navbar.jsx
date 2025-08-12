@@ -1,35 +1,40 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import logo from "../assets/logo2.png"; // Ensure your logo is at this path
+import logo from "../assets/logo2.png";
 
 const navLinks = [
   { name: "HOME", href: "#" },
   { name: "ABOUT US", href: "#about" },
   { name: "PRODUCTS", href: "#products" },
-  { name: "INFRASTRUCTURE", href: "#infrastructure" },
   { name: "CONTACT", href: "#contact" },
+  { name: "FINANCIAL REPORT", href: "#report" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close menu on link click (for mobile UX)
   const handleLinkClick = () => setIsOpen(false);
 
   return (
     <nav className="bg-white/90 shadow-lg fixed w-full z-50 backdrop-blur-md transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Full width container with no left/right padding */}
+      <div className="w-full">
         <div className="flex justify-between h-16 items-center">
-          {/* Logo & Company Name - clickable */}
-          <a href="#" className="flex items-center space-x-3 group">
-            <img src={logo} alt="Logo" className="h-10 transition-transform group-hover:scale-105" />
+          
+          {/* Left: Logo + Company Name */}
+          <div className="flex items-center space-x-3 pl-4">
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-10 transition-transform group-hover:scale-105"
+            />
             <span className="font-extrabold text-lg tracking-wider text-[#242c80] uppercase">
               GARLON POLYFAB INDUSTRIES LIMITED
             </span>
-          </a>
+          </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-3 lg:space-x-6 items-center">
+          {/* Middle: Nav Links */}
+          <div className="hidden md:flex flex-1 justify-center space-x-3 lg:space-x-6">
             {navLinks.slice(0, -1).map((link) => (
               <a
                 key={link.name}
@@ -44,13 +49,15 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            {/* Last Link as Button (Contact) */}
+          </div>
+
+          {/* Right: Contact Button flush right */}
+          <div className="hidden md:flex pr-4">
             <a
               href={navLinks[navLinks.length - 1].href}
               className="
-                ml-2 px-5 py-2 rounded-full font-semibold
-                bg-[#242c80]
-                text-white shadow-lg ring-1 ring-blue-300
+                px-5 py-2 rounded-full font-semibold
+                bg-[#242c80] text-white shadow-lg ring-1 ring-blue-300
                 hover:from-blue-700 hover:to-blue-500
                 transition-all duration-200 uppercase
               "
@@ -60,7 +67,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Hamburger */}
-          <div className="md:hidden">
+          <div className="md:hidden pr-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-blue-700 hover:text-blue-900 focus:outline-none"
